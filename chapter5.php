@@ -136,7 +136,8 @@ Blackie","Stollenbeck","Houseago","Dugall","Sprowson","Kitley","Mcenamin",
 "Prater","Probart","Samwaye","Concannon","MacLure","Eliet","Kundt","Reyes");
 
 // bool in_array( $val, $array_name, $mode )
-$userToSearch = "dsfdsf";
+//todo forminput
+$userToSearch = "Bradwell";
 $isInArray = in_array($userToSearch, $google);
 
 if($isInArray){
@@ -149,7 +150,40 @@ else{
 }
 $message = "<div class='alert alert-$alertType' role='alert'>$msg</div>";
 echo $message;
+echo "<br>";
+//Pildid
+//"prentice.jpg","freeland.jpg","peterus.jpg","devlin.jpg","gabriel.jpg","pete.jpg"
+$img = array("prentice.jpg","freeland.jpg","peterus.jpg","devlin.jpg","gabriel.jpg","pete.jpg");
+echo "<img src = 'img/$img[2]'><br>";
+foreach($img as $image){
+    echo "<img src = 'img/$image'>";
+}
+//todo fix alignment
 
+$bootStrapImages = 
+"<div class = 'container'>
+<div class='row>
+    <div class='col-md-2'>
+        <img src=img/$img[0] class='img-fluid'>
+    </div>
+    <div class='col-md-2'>
+        <img src=img/$img[1]  class='img-fluid'>
+    </div>
+    <div class='col-md-2'>
+        <img src=img/$img[2] class='img-fluid'>
+    </div>
+    <div class='col-md-2'>
+        <img src=img/$img[3] class='img-fluid'>
+    </div>
+    <div class='col-md-2'>
+        <img src=img/$img[4]  class='img-fluid'>
+    </div>
+    <div class='col-md-2'>
+        <img src=img/$img[5] class='img-fluid'>
+    </div>
+</div>
+</div>";
+echo $bootStrapImages;
 ?>
 <!-- Bootstrap library -->
 <!DOCTYPE html>
