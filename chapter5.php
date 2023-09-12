@@ -134,10 +134,20 @@ Blackie","Stollenbeck","Houseago","Dugall","Sprowson","Kitley","Mcenamin",
 "Allchin","Doghartie","Brierly","Pirrone","Fairnie","Seal","Scoffins",
 "Galer","Matevosian","DeBlase","Cubbin","Izzett","Ebi","Clohisey",
 "Prater","Probart","Samwaye","Concannon","MacLure","Eliet","Kundt","Reyes");
+
 // bool in_array( $val, $array_name, $mode )
-$userToSearch = "Feake";
+$userToSearch = "dsfdsf";
 $isInArray = in_array($userToSearch, $google);
-$message = '<div class="alert alert-success" role="alert">Success</div>';
+
+if($isInArray){
+    $alertType = 'success';
+    $msg = $userToSearch. ' is in array';
+}
+else{
+    $alertType = 'danger';
+    $msg = $userToSearch. ' is not in array';
+}
+$message = "<div class='alert alert-$alertType' role='alert'>$msg</div>";
 echo $message;
 
 ?>
