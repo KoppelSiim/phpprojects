@@ -1,6 +1,13 @@
-<?php
-//Ülesanne 5, Siim Koppel
+<!-- Ülesanne 5, Siim Koppel -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Bootstrap library css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
 
+<?php
 //Tüdrukud
 $girls = array("mari", "karin", "elvi","tiina","anna","getter","helis","piret");
 sort($girls);
@@ -158,43 +165,27 @@ echo "<img src = 'img/$img[2]'><br>";
 foreach($img as $image){
     echo "<img src = 'img/$image'>";
 }
-//todo fix alignment
+echo "<br>";
+?>
 
-$bootStrapImages = 
-"<div class = 'container'>
-<div class='row>
-    <div class='col-md-2'>
-        <img src=img/$img[0] class='img-fluid'>
-    </div>
-    <div class='col-md-2'>
-        <img src=img/$img[1]  class='img-fluid'>
-    </div>
-    <div class='col-md-2'>
-        <img src=img/$img[2] class='img-fluid'>
-    </div>
-    <div class='col-md-2'>
-        <img src=img/$img[3] class='img-fluid'>
-    </div>
-    <div class='col-md-2'>
-        <img src=img/$img[4]  class='img-fluid'>
-    </div>
-    <div class='col-md-2'>
-        <img src=img/$img[5] class='img-fluid'>
+<div class="container">
+<h1>Image Gallery</h1>
+
+    <div class="row">
+    <?php
+    // Loop through the array and generate image elements
+    foreach ($img as $image) {
+        echo '
+        <div class="col-md-2">
+            <img src="img/' . $image . '" alt="' . $image . '" class="img-fluid">
+        </div>';
+    }
+    ?>
     </div>
 </div>
-</div>";
-echo $bootStrapImages;
-?>
-<!-- Bootstrap library -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<body>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+<!-- Bootstrap library javascript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
-<!-- Bootstrap library -->
