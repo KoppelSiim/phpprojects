@@ -11,6 +11,7 @@
 <?php
 
 //Tüdrukud
+echo "<h2>Girls</h2>";
 $girls = array("mari", "karin", "elvi","tiina","anna","getter","helis","piret");
 sort($girls);
 foreach($girls as $name){
@@ -30,6 +31,7 @@ echo $girls[$randInt] . "<br>";
 echo "<br>";
 
 //Autod 
+echo "<h2>Cars</h2>";
 $cars = array("Subaru","BMW","Acura","Mercedes-Benz","Lexus","GMC","Volvo","Toyota","Volkswagen","Volkswagen","GMC","Jeep","Saab","Hyundai","Subaru","Mercedes-Benz",
 "Honda","Kia","Mercedes-Benz","Chevrolet","Chevrolet","Porsche","Buick","Dodge","GMC","Dodge","Nissan","Dodge","Jaguar","Ford","Honda","Toyota","Jeep",
 "Kia","Buick","Chevrolet","Subaru","Chevrolet","Chevrolet","Pontiac","Maybach","Chevrolet","Plymouth","Dodge","Nissan","Porsche","Nissan","Mercedes-Benz",
@@ -87,12 +89,14 @@ foreach ($vinCodes as $code){
 echo "<br>";
 
 // Keskmised palgad
+echo "<h2>Average salary</h2>";
 $salary = array(1220,1213,1295,1312,1298,1354,1296,1286,1292,1327,1369,1455);
 $average = round(array_sum($salary) / count($salary));
 echo "Average salary is $average<br>";
 echo "<br>";
 
 //Firmad
+echo "<h2>Companies</h2>";
 $companies = array("Kimia","Mynte","Voomm","Twiyo","Layo","Talane","Gigashots","Tagchat","Quaxo","Voonyx","Kwilith","Edgepulse","Eidel","Eadel","Jaloo","Oyope","Jamia");
 
 if (isset($_GET["companyToRemove"])) {
@@ -130,6 +134,7 @@ echo "<br>";
 echo "<br>";
 
 //Riigid
+echo "<h2>Countries</h2>";
 $countries = array("Indonesia","Canada","Kyrgyzstan","Germany","Philippines",
 "Philippines","Canada","Philippines","South Sudan","Brazil",
 "Democratic Republic of the Congo","Indonesia","Syria","Sweden",
@@ -146,6 +151,7 @@ foreach($countries as $country){
 echo "$longestCountryLen<br>";
 
 //Hiina nimed
+echo "<h2>Chinise names</h2>";
 $chNames = array("瀚聪","月松","雨萌","展博","雪丽","哲恒","慧妍","博裕","宸瑜","奕漳",
 "思宏","伟菘","彦歆","睿杰","尹智","琪煜","惠茜","晓晴","志宸","博豪",
 "璟雯","崇杉","俊誉","军卿","辰华","娅楠","志宸","欣妍","明美");
@@ -159,6 +165,7 @@ echo $chNames[(count($chNames)-1)] . "<br>";
 echo "<br>";
 
 //Google
+echo "<h2>Google search</h2>";
 $google = array("Feake","Bradwell","Dreger","Bloggett","Lambole","Daish","Lippiett","
 Blackie","Stollenbeck","Houseago","Dugall","Sprowson","Kitley","Mcenamin",
 "Allchin","Doghartie","Brierly","Pirrone","Fairnie","Seal","Scoffins",
@@ -195,6 +202,7 @@ if(isset($_GET['searchUser'])){
     echo "<br>";
 }
 //Pildid
+echo "<h2>Images/h2>";
 $img = array("prentice.jpg","freeland.jpg","peterus.jpg","devlin.jpg","gabriel.jpg","pete.jpg");
 echo "<img src = 'img/$img[2]'><br>";
 foreach($img as $image){
