@@ -212,7 +212,7 @@ echo "<br>";
 ?>
 
 <div class="container">
-<h1>Image Gallery</h1>
+<h2>Image Gallery</h2>
 
     <div class="row">
     <?php
