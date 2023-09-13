@@ -94,22 +94,15 @@ echo "<br>";
 
 //Firmad
 $companies = array("Kimia","Mynte","Voomm","Twiyo","Layo","Talane","Gigashots","Tagchat","Quaxo","Voonyx","Kwilith","Edgepulse","Eidel","Eadel","Jaloo","Oyope","Jamia");
-//var_dump($companies);
-//removed companies
 
 if (isset($_GET["companyToRemove"])) {
     $companyToRemove = $_GET["companyToRemove"];
-    $removedC = []; 
-    array_push($removedC, $companyToRemove);
-    var_dump($removedC);
+
     // Check if the company to remove exists in the array
     $key = array_search($companyToRemove, $companies);
     if ($key !== false) {
         // Remove the company from the array
         unset($companies[$key]);
-        // Re-index the array
-       // $companies = array_values($companies);
-        
     }
 }
 
@@ -182,6 +175,7 @@ Blackie","Stollenbeck","Houseago","Dugall","Sprowson","Kitley","Mcenamin",
 <button type="submit" class="btn btn-primary mb-3">Submit</button>
 </form>
 <!-- Search user form -->
+
 <?php
 if(isset($_GET['searchUser'])){
     $userToSearch = $_GET['searchUser'];
