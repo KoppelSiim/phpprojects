@@ -9,6 +9,7 @@
 <body>
 
 <?php
+
 //Tüdrukud
 $girls = array("mari", "karin", "elvi","tiina","anna","getter","helis","piret");
 sort($girls);
@@ -93,24 +94,27 @@ echo "<br>";
 
 //Firmad
 $companies = array("Kimia","Mynte","Voomm","Twiyo","Layo","Talane","Gigashots","Tagchat","Quaxo","Voonyx","Kwilith","Edgepulse","Eidel","Eadel","Jaloo","Oyope","Jamia");
-$companyToRemove = "";
-// Check if the form has been submitted
-// isset($_POST["companyToRemove"]) check if the field is filled
-if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_POST["companyToRemove"])) {
-    // Get the user input from the form
-    $companyToRemove = $_POST["companyToRemove"];
+//var_dump($companies);
+//removed companies
+
+if (isset($_GET["companyToRemove"])) {
+    $companyToRemove = $_GET["companyToRemove"];
+    $removedC = []; 
+    array_push($removedC, $companyToRemove);
+    var_dump($removedC);
     // Check if the company to remove exists in the array
     $key = array_search($companyToRemove, $companies);
     if ($key !== false) {
         // Remove the company from the array
         unset($companies[$key]);
-
         // Re-index the array
-        $companies = array_values($companies);
+       // $companies = array_values($companies);
+        
     }
 }
-$companyToRemove = "";
+
 asort($companies);
+
 foreach($companies as $company){
     echo "$company<br>";
 }
@@ -118,7 +122,7 @@ echo "<br>";
 ?>
 
 <!-- Company to remove forminput html -->
-<form action = "chapter5.php" method = "POST">
+<form action = "chapter5.php" method = "GET">
 <div class="mb-3">
   <label for="companyToRemove" class="form-label">Insert company to remove</label>
   <!-- "name="companyToRemove"  is important for PHP-->
@@ -168,24 +172,35 @@ Blackie","Stollenbeck","Houseago","Dugall","Sprowson","Kitley","Mcenamin",
 "Galer","Matevosian","DeBlase","Cubbin","Izzett","Ebi","Clohisey",
 "Prater","Probart","Samwaye","Concannon","MacLure","Eliet","Kundt","Reyes");
 
-// bool in_array( $val, $array_name, $mode )
-//todo forminput
-$userToSearch = "Bradwell";
-$isInArray = in_array($userToSearch, $google);
+?>
+<!-- Search user form -->
+<form action = chapter5.php method = "GET">
+<div class="mb-3">
+    <label for="searcUser" class="form-label">Search user</label>
+    <input type="text" class="form-control" id="searchUser"name="searchUser" placeholder="Search user ...">
+</div>
+<button type="submit" class="btn btn-primary mb-3">Submit</button>
+</form>
+<!-- Search user form -->
+<?php
+if(isset($_GET['searchUser'])){
+    $userToSearch = $_GET['searchUser'];
+    // bool in_array( $val, $array_name, $mode )
+    $isInArray = in_array($userToSearch, $google);
 
-if($isInArray){
-    $alertType = 'success';
-    $msg = $userToSearch. ' is in array';
+    if($isInArray){
+        $alertType = 'success';
+        $msg = $userToSearch. ' is in array';
+    }
+    else{
+        $alertType = 'danger';
+        $msg = $userToSearch. ' is not in array';
+    }
+    $message = "<div class='alert alert-$alertType' role='alert'>$msg</div>";
+    echo $message;
+    echo "<br>";
 }
-else{
-    $alertType = 'danger';
-    $msg = $userToSearch. ' is not in array';
-}
-$message = "<div class='alert alert-$alertType' role='alert'>$msg</div>";
-echo $message;
-echo "<br>";
 //Pildid
-//"prentice.jpg","freeland.jpg","peterus.jpg","devlin.jpg","gabriel.jpg","pete.jpg"
 $img = array("prentice.jpg","freeland.jpg","peterus.jpg","devlin.jpg","gabriel.jpg","pete.jpg");
 echo "<img src = 'img/$img[2]'><br>";
 foreach($img as $image){
