@@ -9,7 +9,7 @@
 <body>
 
 <?php
-
+echo "<h1>Chapter 5</h1>";
 //Tüdrukud
 echo "<h2>Girls</h2>";
 $girls = array("mari", "karin", "elvi","tiina","anna","getter","helis","piret");
@@ -202,7 +202,7 @@ if(isset($_GET['searchUser'])){
     echo "<br>";
 }
 //Pildid
-echo "<h2>Images/h2>";
+echo "<h2>Images</h2>";
 $img = array("prentice.jpg","freeland.jpg","peterus.jpg","devlin.jpg","gabriel.jpg","pete.jpg");
 echo "<img src = 'img/$img[2]'><br>";
 foreach($img as $image){
