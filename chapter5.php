@@ -1,4 +1,5 @@
 <!-- Ülesanne 5, Siim Koppel -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,18 +93,43 @@ echo "<br>";
 
 //Firmad
 $companies = array("Kimia","Mynte","Voomm","Twiyo","Layo","Talane","Gigashots","Tagchat","Quaxo","Voonyx","Kwilith","Edgepulse","Eidel","Eadel","Jaloo","Oyope","Jamia");
+$companyToRemove = "";
+// Check if the form has been submitted
+// isset($_POST["companyToRemove"]) check if the field is filled
+if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_POST["companyToRemove"])) {
+    // Get the user input from the form
+    $companyToRemove = $_POST["companyToRemove"];
+    // Check if the company to remove exists in the array
+    $key = array_search($companyToRemove, $companies);
+    if ($key !== false) {
+        // Remove the company from the array
+        unset($companies[$key]);
+
+        // Re-index the array
+        $companies = array_values($companies);
+    }
+}
+$companyToRemove = "";
 asort($companies);
 foreach($companies as $company){
     echo "$company<br>";
 }
 echo "<br>";
-$companyToRemove = "Gigashots";
-$indexToRemove = array_search($companyToRemove, $companies);
-unset($companies[$indexToRemove]);
-echo "New array with $companyToRemove removed: <br>";
-foreach($companies as $company){
-    echo "$company<br>";
-}
+?>
+
+<!-- Company to remove forminput html -->
+<form action = "chapter5.php" method = "POST">
+<div class="mb-3">
+  <label for="companyToRemove" class="form-label">Insert company to remove</label>
+  <!-- "name="companyToRemove"  is important for PHP-->
+  <input type="text" class="form-control" id="companyToRemove"name="companyToRemove" placeholder="Insert company to remove ...">
+</div>
+<button type="submit" class="btn btn-primary mb-3">Submit</button>
+</form>
+<!-- Company to remove forminput html -->
+
+<?php
+
 echo "<br>";
 
 //Riigid
