@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +25,6 @@ echo greeting();
 <?php
 function generate_form()
 {
-    session_start(); // Start or resume the session
     echo('
         <form action="chapter7.php" method="POST">
         <div class="mb-3">
