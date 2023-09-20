@@ -269,7 +269,22 @@ generate_form();
         }
     }
 ?>
-
+<br>
+<h4>Good thoughts</h4>
+<?php
+    //I do not expect these to make sense
+    function good_thoughts() {
+        $subject = array("Sun", "Man","Woman", "Bear", "I");
+        $predicate = array("shines","fly", "eat", "sleep", "drink");
+        $objective = array("water","honey","bed","warmth","dream");
+        $randomSubject = $subject[array_rand($subject)];
+        $randomPredicate = $predicate[array_rand($predicate)];
+        $randomObjective = $objective[array_rand($objective)];
+        $sentance = $randomSubject." ".$randomPredicate." ".$randomObjective.".<br>";
+        return $sentance;
+    }
+    echo good_thoughts();
+?>
 </container>
 
 <!-- Bootstrap library javascript -->
