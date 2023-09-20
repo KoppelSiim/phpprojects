@@ -25,7 +25,7 @@ echo greeting();
 <h4>Bootstrap form </h4>
 
 <!--Bootstrap Form row and column -->
-<div class="row">
+<div class="row mb-3">
     <div class="col-3">
 <?php
 function generate_form()
@@ -94,6 +94,7 @@ function generate_form()
                     "user" => $newUser,
                     "email" => $newEmail
                 ];
+
                 // Save to session
                 $_SESSION["formData"][] = $newData;
 
@@ -101,7 +102,7 @@ function generate_form()
             }
             /* Debugging: Display all user and email data
                 echo "<pre>";
-                print_r($formData);
+                print_r($_SESSION["formData"]);
                 echo "</pre>";
             */
         } else{
@@ -117,6 +118,35 @@ generate_form();
     </div>
 <!--Bootstrap Form row and column end -->
 
+<h2>Username and E-mail function</h2>
+<?php
+    function userAndEmail($userName){
+        $uToLower = strtolower($userName);
+        $email = $uToLower."@hkhk.edu.ee";
+        $code = '';
+        for($i = 0; $i < 7; $i++){
+
+            // Choose with approximately 50% chance to generate either a number or letter
+            $choice = rand(0,1);
+
+            if($choice == 0){
+            // Random int from 0 - 9, both inclusive
+            $randomNr = rand(0, 9);
+            $code .= $randomNr;
+            }
+            else{
+            // chr - convert the generated ASCII code back into a character
+            // ASCII codes for 'A' to'Z', both inclusive
+            $randomLetter = chr(rand(65, 90)); 
+            $code .= $randomLetter;
+            }
+            
+        }
+        
+        return "Your username is ".$uToLower." and your e-mail is ".$email ."<br>Your personal code is: ".$code."<br>";
+    }
+    echo userAndEmail("TEST");
+?>
 </container>
 
 <!-- Bootstrap library javascript -->
