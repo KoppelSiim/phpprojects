@@ -158,7 +158,7 @@ generate_form();
             
         }
 
-        return "Your username is ".$uToLower." and your e-mail is ".$email ."<br>Your personal code is: ".$code."<br>";
+        return "Your username is ".$uToLower." and your e-mail is ".$email ."<br>Your personal code is: ".$code."<br><br>";
     }
 
     if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["userName"]))  {
@@ -166,7 +166,7 @@ generate_form();
         echo $result;
     }
 ?>
-<br>
+
 <h4>Numbers</h4>
 <form action = "chapter7.php" method="POST" class="mb-3">
     <div class="row">
@@ -192,11 +192,84 @@ generate_form();
         for ($i = $start; $i <= $stop; $i += $step){
             echo $i . " ";
         }
+        echo "<br>";
     }
    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["start"], $_POST["stop"], $_POST["step"])) {
     numbers($_POST["start"], $_POST["stop"], $_POST["step"]);
    }
 ?>
+<br>
+<h4>Rectangular area</h4>
+<form action = "chapter7.php" method="POST" class="mb-3 mt-3">
+    <div class="row">
+        <div class="col-2">
+            <label for="width" class="form-label">Width</label>
+            <input type="number" class="form-control" id="width" name="width" placeholder="Width" required min="0" pattern="[0-9]+">
+        </div>
+        <div class="col-2">
+            <label for="length " class="form-label">Length</label>
+            <input type="number" class="form-control" id="length" name="length" placeholder="Length" required min="0" pattern="[0-9]+">
+        </div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        </div>
+    </div>
+</form>
+<?php
+    function rectArea($width, $length){
+        return $width * $length;
+    }
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["width"], $_POST["length"])) {
+        echo "The area of the rectangle is ".rectArea($_POST["width"],$_POST["length"])."<br>";
+    }
+?>
+<br>
+<h4>Social security number</h4>
+<form action = "chapter7.php" method="POST" class="mb-3 mt-3">
+    <div class="row">
+        <div class="col-3 mb-3">
+            <label for="ssn" class="form-label">SSN</label>
+            <input type="text" class="form-control" id="ssn" name="ssn" placeholder="SSN" pattern="[0-9]+">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary mb-3">Submit</button>
+</form>
+<?php
+    
+    function validation($ssn){
+        $valid = false;
+        $data = []; 
+        if(strlen($ssn) == 11){
+            $valid = true;
+        }
+        if($valid){
+            if ($ssn[0] === '3'){
+                $sex = "male";
+            }
+            elseif($ssn[0] === '4'){
+                $sex = "female";
+            }
+            array_push($data, $sex);
+            $yearPart = substr($ssn, 1, 2);
+            $birthYear = 1900 + intval($yearPart);
+            array_push($data, $birthYear);
+            return $data;
+        }
+        else{
+            return "Invalid SSN lenght<br>";
+        }
+    }
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["ssn"])){
+        $res = validation($_POST["ssn"]);
+        if(is_array($res)){
+            echo "Your sex is ".$res[0]." and your birthyear is ".$res[1]."<br>";
+        }
+        else{
+            echo $res;
+        }
+    }
+?>
+
 </container>
 
 <!-- Bootstrap library javascript -->
