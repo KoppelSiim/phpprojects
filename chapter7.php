@@ -157,13 +157,38 @@ generate_form();
             }
             
         }
-        
+
         return "Your username is ".$uToLower." and your e-mail is ".$email ."<br>Your personal code is: ".$code."<br>";
     }
+
     if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["userName"]))  {
         $result = userAndEmail($_POST["userName"]);
         echo $result;
     }
+?>
+<br>
+<h4>Numbers</h4>
+<form>
+    <div class="row">
+        <div class="col-1">
+            <label for="start" class="form-label">Start</label>
+            <input type="number" class="form-control" id="start" name="start" placeholder="Start" required>
+        </div>
+        <div class="col-1">
+            <label for="stop" class="form-label">Stop</label>
+            <input type="number" class="form-control" id="stop" name="stop" placeholder="Stop" required>
+        </div>
+        <div class="col-1">
+            <label for="step" class="form-label">Step</label>
+            <input type="number" class="form-control" id="step" name="step" placeholder="Step" required>
+        </div>
+        <div class="col-1">
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        </div>
+    </div>
+</form>
+<?php
+
 
 ?>
 </container>
