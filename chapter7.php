@@ -12,20 +12,20 @@ session_start();
 <body>
 <div class="container mt-3 mb-3">
 <h1>Chapter 7</h1>
+<br>
 <h4>Greeting function</h4>
-
 <?php
 function greeting()
 {
-    return "Hello world";
+    return "Hello world<br>";
 }
 echo greeting();
 ?>
 
-<h4>Bootstrap form </h4>
+<h4>Bootstrap newsletter form</h4>
 
 <!--Bootstrap Form row and column -->
-<div class="row mb-3">
+<div class="row mb-3 mt-3">
     <div class="col-3">
 <?php
 function generate_form()
@@ -118,7 +118,22 @@ generate_form();
     </div>
 <!--Bootstrap Form row and column end -->
 
-<h2>Username and E-mail function</h2>
+<h4>Username and E-mail function</h4>
+
+<!--Bootstrap Form row and column -->
+<div class="row mb-3 mt-3">
+    <div class="col-3">
+        <form action="chapter7.php" method="POST">
+            <div class="mb-3">
+                <label for="userName" class="form-label">User</label>
+                <input type="text" class="form-control" id="userName" name="userName" placeholder="Enter your username" required>
+            </div>
+            <button type="submit" class="btn btn-primary mb-3">Submit</button>
+        </form>
+    </div>
+</div>
+<!--Bootstrap Form row and column end -->
+    
 <?php
     function userAndEmail($userName){
         $uToLower = strtolower($userName);
@@ -145,7 +160,11 @@ generate_form();
         
         return "Your username is ".$uToLower." and your e-mail is ".$email ."<br>Your personal code is: ".$code."<br>";
     }
-    echo userAndEmail("TEST");
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["userName"]))  {
+        $result = userAndEmail($_POST["userName"]);
+        echo $result;
+    }
+
 ?>
 </container>
 
