@@ -168,7 +168,7 @@ generate_form();
 ?>
 <br>
 <h4>Numbers</h4>
-<form>
+<form action = "chapter7.php" method="POST">
     <div class="row">
         <div class="col-1">
             <label for="start" class="form-label">Start</label>
@@ -188,8 +188,14 @@ generate_form();
     </div>
 </form>
 <?php
-
-
+    function numbers($start, $stop, $step){
+        for ($i = $start; $i <= $stop; $i += $step){
+            echo $i . " ";
+        }
+    }
+   if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["start"], $_POST["stop"], $_POST["step"])) {
+    numbers($_POST["start"], $_POST["stop"], $_POST["step"]);
+   }
 ?>
 </container>
 
