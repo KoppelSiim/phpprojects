@@ -168,19 +168,19 @@ generate_form();
 ?>
 <br>
 <h4>Numbers</h4>
-<form action = "chapter7.php" method="POST">
+<form action = "chapter7.php" method="POST" class="mb-3">
     <div class="row">
         <div class="col-1">
             <label for="start" class="form-label">Start</label>
-            <input type="number" class="form-control" id="start" name="start" placeholder="Start" required>
+            <input type="number" class="form-control" id="start" name="start" placeholder="Start" required min="0" pattern="[0-9]+">
         </div>
         <div class="col-1">
             <label for="stop" class="form-label">Stop</label>
-            <input type="number" class="form-control" id="stop" name="stop" placeholder="Stop" required>
+            <input type="number" class="form-control" id="stop" name="stop" placeholder="Stop" required min="1" pattern="[0-9]+">
         </div>
         <div class="col-1">
             <label for="step" class="form-label">Step</label>
-            <input type="number" class="form-control" id="step" name="step" placeholder="Step" required>
+            <input type="number" class="form-control" id="step" name="step" placeholder="Step" required min="1"pattern="[0-9]+">
         </div>
         <div class="col-1">
         <button type="submit" class="btn btn-primary mt-4">Submit</button>
