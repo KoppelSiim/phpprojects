@@ -1,4 +1,5 @@
 <?php
+// Start or resume the session
 session_start();
 ?>
 <!DOCTYPE html>
@@ -40,29 +41,66 @@ function generate_form()
         ');
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
         // Check if the "user" and "email" fields are set in the POST data
         if (isset($_POST["user"]) && isset($_POST["email"])) {
-           // Create an empty array to store user and email data
+
+            // Create an empty array to store user and email data
             $formData = [];
-            // Check if $formData is already set in session to preserve existing data
-            if (isset($_SESSION["formData"]) && is_array($_SESSION["formData"])) {
-                $formData = $_SESSION["formData"];
+
+             // Check if $formData is already set in session to preserve existing data
+            if (!isset($_SESSION["formData"]) || !is_array($_SESSION["formData"])) {
+                $_SESSION["formData"] = []; // Initialize an empty array if not set
             }
-            // Add the new user and email data to the array
-            $newData = [
-                "user" => $_POST["user"],
-                "email" => $_POST["email"]
-            ];
-            $formData[] = $newData;
-            // Save the updated data in the session
-            $_SESSION["formData"] = $formData;
-            echo "Form submitted successfully!";
-            // Debugging: Display all user and email data
-            echo "<pre>";
-            print_r($formData);
-            echo "</pre>";
-        } else 
-        {
+
+            // Get the new user and email data
+            $newUser = $_POST["user"];
+            $newEmail = $_POST["email"];
+
+            // Check if the user or email is already in use
+            $userExists = false;
+            $emailExists = false;
+
+            foreach ($_SESSION["formData"] as $data) {
+                if ($data["user"] === $newUser) {
+                    $userExists = true;
+                    break;
+                }
+                if ($data["email"] === $newEmail) {
+                    $emailExists = true;
+                    break;
+                }
+            }
+
+            if ($userExists || $emailExists) {
+                // Display an error message if the user or email is not unique
+                echo "Sorry, the ";
+                if ($userExists) {
+                    echo "username";
+                    if ($emailExists) {
+                        echo " and email";
+                    }
+                } else {
+                    echo "email";
+                }
+                echo " is already in use. Please choose a different one.";
+            } else {
+                // Add the new user and email data to the array
+                $newData = [
+                    "user" => $newUser,
+                    "email" => $newEmail
+                ];
+                // Save to session
+                $_SESSION["formData"][] = $newData;
+
+                echo "Thank you, " . htmlspecialchars($_POST["user"]) . "!<br>You are now subscribed!<br>";
+            }
+            /* Debugging: Display all user and email data
+                echo "<pre>";
+                print_r($formData);
+                echo "</pre>";
+            */
+        } else{
             echo "Please fill out both user and email fields.";
         }
     }
