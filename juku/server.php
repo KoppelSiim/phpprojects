@@ -1,6 +1,6 @@
 <?php
     require ($_SERVER["DOCUMENT_ROOT"]."/../config.php");
-    $connect=new mysqli($server, $user, $pass, $db);      
+    global $connect;
     $req = $connect -> prepare("SELECT id, pealkiri, sisu FROM lehed");
     $req -> bind_result($id, $pealkiri, $sisu);
     $req -> execute();
@@ -22,8 +22,23 @@
 
        while($req ->fetch()){
             echo "<h2>".htmlspecialchars($pealkiri)."</h2>";
+            echo "<h4>".htmlspecialchars($sisu)."</h4>";
         }
     ?>
+    <h1>Ülesandeid</h1>
+
+    <?php
+        require ($_SERVER["DOCUMENT_ROOT"]."/../config.php");
+        global $connect; 
+        $req = $connect -> prepare("SELECT id, nimi, toon FROM kassid"); 
+        $req -> bind_result($id, $nimi, $toon);
+        $req -> execute();
+        while($req ->fetch()){
+            echo "<h2>".htmlspecialchars($nimi)."</h2>";
+            echo "<h4>".htmlspecialchars($toon)."</h4>";
+        }
+    ?>
+
 
 </body>
 </html>
