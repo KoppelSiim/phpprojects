@@ -1,9 +1,9 @@
 <?php
+    require ($_SERVER["DOCUMENT_ROOT"]."/../config.php");
     $connect=new mysqli($server, $user, $pass, $db);      
     $req = $connect -> prepare("SELECT id, pealkiri, sisu FROM lehed");
     $req -> bind_result($id, $pealkiri, $sisu);
     $req -> execute();
-    phpinfo();
 ?>
 
 
@@ -20,9 +20,9 @@
     
     <?php
 
-       /* while($req ->fetch()){
+       while($req ->fetch()){
             echo "<h2>".htmlspecialchars($pealkiri)."</h2>";
-        }*/
+        }
     ?>
 
 </body>
