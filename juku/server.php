@@ -6,7 +6,6 @@
     $req -> execute();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,10 +25,9 @@
         }
     ?>
     <h1>Ülesandeid</h1>
-
+    <h4>Väljasta kassid</h4>
     <?php
         require ($_SERVER["DOCUMENT_ROOT"]."/../config.php");
-        global $connect; 
         $req = $connect -> prepare("SELECT id, nimi, toon FROM kassid"); 
         $req -> bind_result($id, $nimi, $toon);
         $req -> execute();
@@ -38,7 +36,15 @@
             echo "<h4>".htmlspecialchars($toon)."</h4>";
         }
     ?>
-
+    <h4>Lisa 2 kassi</h4>
+    <?php
+        $insert = $connect -> prepare("INSERT INTO kassid(nimi,toon) VAlUES('Musike','Helekuldne'), ('Kullakallike','Tumesinine');");
+        if ($insert->execute()) {
+            echo "New record created successfully";
+           } else {
+            echo "Unable to create record";
+           }
+    ?>
 
 </body>
 </html>
