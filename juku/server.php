@@ -36,14 +36,21 @@
             echo "<h4>".htmlspecialchars($toon)."</h4>";
         }
     ?>
-    <h4>Lisa 2 kassi</h4>
-    <?php
+     <!-- Kasside lisamine
         $insert = $connect -> prepare("INSERT INTO kassid(nimi,toon) VAlUES('Musike','Helekuldne'), ('Kullakallike','Tumesinine');");
         if ($insert->execute()) {
             echo "New record created successfully";
-           } else {
+        } else {
             echo "Unable to create record";
-           }
+        } -->
+    <h4>Kuva kassid toonide järjekorras</h4>
+    <?php
+        $cats = $connect -> prepare("SELECT id, nimi, toon FROM kassid ORDER BY toon ASC;");
+        $cats -> bind_result($id, $nimi, $toon);
+        $cats -> execute();
+        while($cats->fetch()){
+            echo "<h5>".htmlspecialchars($toon)."</h5>";
+        }
     ?>
 
 </body>
