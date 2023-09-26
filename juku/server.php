@@ -47,10 +47,10 @@
             echo"<h1>Koerad</h1>";
             $dogs = $connect -> prepare("SELECT id, nimi, kirjeldus, pildilink FROM koerad");
             $dogs -> bind_result($id, $nimi, $kirjeldus, $pildilink);
-            $dogs ->execute();
+            $dogs -> execute();
             echo "<ol>";
             while($dogs -> fetch()){
-                echo"<a><li>$nimi</li></a>";
+                echo"<a href='$pildilink'><li>$nimi</li></a>";
             }
             echo "</ol>";
         }
