@@ -48,9 +48,11 @@
             $dogs = $connect -> prepare("SELECT id, nimi, kirjeldus, pildilink FROM koerad");
             $dogs -> bind_result($id, $nimi, $kirjeldus, $pildilink);
             $dogs ->execute();
+            echo "<ol>";
             while($dogs -> fetch()){
-                echo"<li>$nimi</li>";
+                echo"<a><li>$nimi</li></a>";
             }
+            echo "</ol>";
         }
 
 
