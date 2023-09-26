@@ -12,6 +12,7 @@
     <title>Document</title>
 </head>
 <body>
+    
     <ol>
         <li><a href="?page=teated">Teated</a></li>
         <li><a href="?page=kassid">Kassid</a></li>
@@ -50,13 +51,18 @@
             $dogs -> execute();
             echo "<ol>";
             while($dogs -> fetch()){
-                echo"<a href='$pildilink'><li>$nimi</li></a>";
+                echo "<li><a href='javascript:void(0);' onclick='loadImage(\"$pildilink\", \"$kirjeldus\");'>$nimi</a></li>";
             }
             echo "</ol>";
+            echo "<div id='imageContainer'></div>";
         }
-
-
     ?>
+
+    <script>
+    function loadImage(pildilink, kirjeldus) {
+        document.getElementById('imageContainer').innerHTML = `<img src="${pildilink}" alt="img" width="500px" height = "auto"><p>${kirjeldus}</p>`;                                                
+    }
+    </script>
 
 </body>
 </html>
