@@ -15,6 +15,7 @@
     <ol>
         <li><a href="?page=teated">Teated</a></li>
         <li><a href="?page=kassid">Kassid</a></li>
+        <li><a href="?page=koerad">Koerad</a></li>
     </ol>
     <?php
         if (isset($_GET['page']) && $_GET['page'] == 'teated') {
@@ -29,17 +30,30 @@
             }
         }
     ?>
-
     <?php
-    if (isset($_GET['page']) && $_GET['page'] == 'kassid') {
-        echo"<h1>Kassid</h1>";
-        $cats = $connect -> prepare("SELECT id, nimi, toon FROM kassid");
-        $cats -> bind_result($id, $nimi, $toon);
-        $cats -> execute();
-        while($cats->fetch()){
-            echo "<h5 style ='color:$toon;'>".htmlspecialchars($toon)."</h5>";
+        if (isset($_GET['page']) && $_GET['page'] == 'kassid') {
+            echo"<h1>Kassid</h1>";
+            $cats = $connect -> prepare("SELECT id, nimi, toon FROM kassid");
+            $cats -> bind_result($id, $nimi, $toon);
+            $cats -> execute();
+            while($cats->fetch()){
+                echo "<h4 style ='color:$toon;'>".htmlspecialchars($toon)."</h4>";
+            }
         }
-    }
+    ?>
+    <?php
+
+        if (isset($_GET['page']) && $_GET['page'] == 'koerad') {
+            echo"<h1>Koerad</h1>";
+            $dogs = $connect -> prepare("SELECT id, nimi, kirjeldus, pildilink FROM koerad");
+            $dogs -> bind_result($id, $nimi, $kirjeldus, $pildilink);
+            $dogs ->execute();
+            while($dogs -> fetch()){
+                echo"<li>$nimi</li>";
+            }
+        }
+
+
     ?>
 
 </body>
