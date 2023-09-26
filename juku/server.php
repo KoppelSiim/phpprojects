@@ -12,7 +12,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+
     <ol>
         <li><a href="?page=teated">Teated</a></li>
         <li><a href="?page=kassid">Kassid</a></li>
@@ -38,7 +38,7 @@
             $cats -> bind_result($id, $nimi, $toon);
             $cats -> execute();
             while($cats->fetch()){
-                echo "<h4 style ='color:$toon;'>".htmlspecialchars($toon)."</h4>";
+                echo "<h4 style ='color:$toon;'>".htmlspecialchars($nimi)."</h4>";
             }
         }
     ?>
