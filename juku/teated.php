@@ -11,6 +11,12 @@
         $connect->close();
         exit();
     }
+    if(isSet($_REQUEST["kustutusid"])){
+
+        $kask=$connect->prepare("DELETE FROM lehed WHERE id=?");
+        $kask->bind_param("i", $_REQUEST["kustutusid"]);
+        $kask->execute();
+        }
 ?>
 
 <!DOCTYPE html>
@@ -22,21 +28,41 @@
     <title>Teated</title>
 </head>
 <body>
+<div id="menyykiht">
 
-<a href='?lisamine=jah'>Lisa ...</a>
-<div id="sisukiht">
-
+<h2>Teated</h2>
+<ul>
 <?php
-        
-    echo"<h1>Teadete loetelu</h1>";
-    $req = $connect -> prepare("SELECT id, pealkiri, sisu FROM lehed");
-    $req -> bind_result($id, $pealkiri, $sisu);
-    $req -> execute();
-        while($req ->fetch()){
-            echo "<h2>".htmlspecialchars($pealkiri)."</h2>";
-            echo "<h4>".htmlspecialchars($sisu)."</h4>";
-        }
+    $kask=$connect->prepare("SELECT id, pealkiri FROM lehed");
+    $kask->bind_result($id, $pealkiri);
+    $kask->execute();
+    while($kask->fetch()){
+        echo "<li><a href='?id=$id'>".
+        htmlspecialchars($pealkiri)."</a></li>";
+    }
+?>
 
+</ul>
+<a href='?lisamine=jah'>Lisa ...</a>
+</div>
+<div id="sisukiht">
+<?php
+
+    if(isSet($_REQUEST["id"])){ 
+
+        $kask=$connect->prepare("SELECT id, pealkiri, sisu FROM lehed WHERE id=?");
+        $kask->bind_param("i", $_REQUEST["id"]);
+        $kask->bind_result($id, $pealkiri, $sisu);
+        $kask->execute();
+
+        if($kask->fetch()){
+            echo "<h2>".htmlspecialchars($pealkiri)."</h2>";
+            echo htmlspecialchars($sisu);
+            echo "<br /><a href='?kustutusid=$id'>kustuta</a>";
+        } else {
+            echo "Vigased andmed.";
+        }
+    } 
 if(isSet($_REQUEST["lisamine"])) {
 ?>
 
