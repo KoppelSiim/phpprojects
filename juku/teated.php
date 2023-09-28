@@ -30,20 +30,33 @@
 <body>
 <div id="menyykiht">
 
-<h2>Teated</h2>
 <ul>
 <?php
     $kask=$connect->prepare("SELECT id, pealkiri FROM lehed");
     $kask->bind_result($id, $pealkiri);
     $kask->execute();
+   
     while($kask->fetch()){
         echo "<li><a href='?id=$id'>".
         htmlspecialchars($pealkiri)."</a></li>";
     }
 ?>
+</ul>
+<a href='?lisamine=jah'>Lisa teade...</a>
+<h2>Koerad</h2>
+<ul>
+<?php
+    $kask2 = $connect -> prepare("SELECT id, nimi, kirjeldus, pildilink FROM koerad");
+    $kask2->bind_result($id, $nimi, $kirjeldus, $pildilink);
+    $kask2 ->execute();
+    while($kask2 ->fetch()){
+        echo "<li><a href='?id=$id'>".
+        htmlspecialchars($nimi)."</a></li>";
+    }
+?>
 
 </ul>
-<a href='?lisamine=jah'>Lisa ...</a>
+<a href='?lisamine=jah'>Lisa koer...</a>
 </div>
 <div id="sisukiht">
 <?php
@@ -86,6 +99,7 @@ if(isSet($_REQUEST["lisamine"])) {
 }
 
 ?>
+
 </div>
 </body>
 </html>
