@@ -7,6 +7,8 @@
     <meta http-equiv="keywords" content="free mobile website templates, free mobile website template, free iphone template, free android template, free high end touch mobile templates, free high end touch mobile template" />
     <meta http-equiv="description" content="Get free mobile website templates for Iphone , Android and High end touch mobile devices" />
     <link href="style.css"rel="stylesheet" type="text/css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
 	<div id="header">
@@ -16,7 +18,7 @@
                 <li><a href="?page=blog">Blog</a></li>
                 <li><a href="?page=about">About</a></li>
                 <li><a href="?page=contact">Contact</a></li>
-                <li><a href="?page=teated">Teated</a></li>
+                <li><a href="?page=registration">Registreeri end siin</a></li>
             </ul>
         </div>
         <div class="logo"><a href="?"><img src="images/logo.jpg" alt="Company Logo - Mobifreaks.com" /></a></div>
