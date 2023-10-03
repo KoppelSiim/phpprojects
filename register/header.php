@@ -12,11 +12,13 @@
 	<div id="header">
         <div class="nav">
         	<ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="index.html">Contact</a></li>
+                <li><a href="?">Home</a></li>
+                <li><a href="?page=blog">Blog</a></li>
+                <li><a href="?page=about">About</a></li>
+                <li><a href="?page=contact">Contact</a></li>
+                <li><a href="?page=teated">Teated</a></li>
             </ul>
         </div>
-        <div class="logo"><a href="index.html"><img src="images/logo.jpg" alt="Company Logo - Mobifreaks.com" /></a></div>
+        <div class="logo"><a href="?"><img src="images/logo.jpg" alt="Company Logo - Mobifreaks.com" /></a></div>
     </div>
+    <div class="clear"></div>
