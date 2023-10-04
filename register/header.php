@@ -17,7 +17,8 @@
                 <li><a href="?page=blog">Blog</a></li>
                 <li><a href="?page=about">About</a></li>
                 <li><a href="?page=contact">Contact</a></li>
-                <li><a href="?page=registration">Registreeri end siin</a></li>
+                <li><a href="?page=registration">Register</a></li>
+                <li><a href="?page=administrator">Admin</a><li>
             </ul>
         </div>
         <div class="logo"><a href="?"><img src="images/logo.jpg" alt="Company Logo - Mobifreaks.com" /></a></div>
