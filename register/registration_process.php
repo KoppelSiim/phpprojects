@@ -1,4 +1,5 @@
 <?php
+session_start();
 require($_SERVER["DOCUMENT_ROOT"]."/../config.php");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -18,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($order->execute()) {
         // Insertion successful, redirect to index
+        $_SESSION["registration_success"] = true;
         header("Location: index.php");
         exit();
     } 

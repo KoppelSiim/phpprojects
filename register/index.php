@@ -1,6 +1,7 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"]."/../config.php");
 global $connect;
+session_start(); // Start the session 
 
 /*
 $order = $connect->prepare("INSERT INTO user (first_name, last_name, email) VALUES(?,?,?)");
@@ -27,6 +28,11 @@ if(isSet($_REQUEST["kustutusid"])){
 }
 */
 require("header.php");
+if (isset($_SESSION["registration_success"]) && $_SESSION["registration_success"] === true) {
+    echo '<p style="color: green; font-size: 20px;">Registration successful!</p>';
+    // Unset the session variable to prevent repeated display
+    unset($_SESSION["registration_success"]);
+}
 
 if(isset($_GET["page"])){
     $openPage = $_GET["page"].".php";

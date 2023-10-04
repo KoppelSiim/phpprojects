@@ -1,5 +1,4 @@
 
-
 <div class="container">
     <form class="submitForm" method="POST" action="registration_process.php">
         <div class="form-item">
