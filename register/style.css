@@ -129,23 +129,36 @@ p a:hover{
 	height: 100vh;
 }
 .container .submitForm{
-	width: 30vw;
+	width: 25vw;
+	margin-left:15px;
 }
-.form-item{
+.container .submitForm .form-item{
 	width: 100%;
 	height: auto;
-	margin-bottom: 10px;
 	margin-bottom: 5px;
 }
-.form-label {
-	
-    margin-bottom: 5px;
+.container .submitForm .form-item .form-label {
+	width: 100%;
+	height: auto;
+	display: block;
+	padding: 5px;
+	margin-bottom: 5px;
 }
-.form-control{
+.container .submitForm .form-item .form-control{
 	width: 100%;
     height: auto;
+	display: block;
 	padding: 5px;
+	margin-bottom: 5px;
     border: 1px solid black;
     border-radius: 4px;
 	box-sizing: border-box;
+}
+.btn{
+	padding: 5px;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+.btn-primary{
+	color:#88aa00;
 }
