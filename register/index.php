@@ -2,6 +2,16 @@
 require($_SERVER["DOCUMENT_ROOT"]."/../config.php");
 global $connect;
 
+/*
+$order = $connect->prepare("INSERT INTO user (first_name, last_name, email) VALUES(?,?,?)");
+$order->bind_param("sss", $_REQUEST["firstName"], $_REQUEST["lastName"], $_REQUEST["email"]);
+$order->execute();
+header("Location: $_SERVER[PHP_SELF]");
+$connect->close();
+exit();
+*/
+
+
 /*if(isSet($_REQUEST["uusleht"])){
     $kask=$connect->prepare("INSERT INTO lehed (pealkiri, sisu) VALUES (?, ?)");
     $kask->bind_param("ss", $_REQUEST["pealkiri"], $_REQUEST["sisu"]);

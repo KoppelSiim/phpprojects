@@ -1,6 +1,6 @@
 
 <div class="container">
-    <form class="submitForm">
+    <form class="submitForm" method="POST" action="registration_process.php">
         <div class="form-item">
             <label for="firstName" class="form-label">Eesnimi</label>
             <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Sisesta eesnimi ...">
