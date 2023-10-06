@@ -1,5 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["delete"])) {
+    session_start();
     require($_SERVER["DOCUMENT_ROOT"]."/../config.php");
     // Get the ID of the item to delete
     $id = $_POST["id"];
@@ -9,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["delete"])) {
     $deleteQuery->bind_param("i", $id);
 
     if ($deleteQuery->execute()) {
+        $_SESSION["delete_success"] = true;
         // Redirect back to the index after successful deletion
         header("Location: index.php");
         //exit();
