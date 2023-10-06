@@ -127,6 +127,7 @@ p a:hover{
 .container{
 	width: 100vw;
 	height: 100vh;
+	overflow-y: auto;
 }
 .container .submitForm{
 	width: 25vw;
@@ -154,6 +155,21 @@ p a:hover{
     border-radius: 4px;
 	box-sizing: border-box;
 }
+.container .submitForm .form-item .form-data{
+	width: 100%;
+    height: auto;
+	display: block;
+	padding: 5px;
+	margin-bottom: 2px;
+}
+
+.container .submitForm .data-item{
+	width: 100%;
+	height: auto;
+	padding:5px;
+	margin-bottom: 10px;
+}
+
 .btn{
 	padding: 5px;
 	margin-top: 5px;
@@ -161,4 +177,9 @@ p a:hover{
 }
 .btn-primary{
 	color:#88aa00;
+}
+button.btn-danger{
+	color: rgb(185, 5, 5);
+	font-weight: bold;
+	margin-top: 5px;
 }

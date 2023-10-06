@@ -1,6 +1,7 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"]."/../config.php");
 global $connect;
+
 session_start(); // Start the session 
 
 /*
@@ -12,15 +13,14 @@ $connect->close();
 exit();
 */
 
-
-/*if(isSet($_REQUEST["uusleht"])){
-    $kask=$connect->prepare("INSERT INTO lehed (pealkiri, sisu) VALUES (?, ?)");
-    $kask->bind_param("ss", $_REQUEST["pealkiri"], $_REQUEST["sisu"]);
-    $kask->execute();
+/*if(isSet($_REQUEST["administrator.php"])){
+    $order = $connect->prepare("SELECT id, first_name, last_name, email FROM user");
+    $order->bind_result($id, $first_name, $last_name, $email);
+    $order->execute();
     header("Location: $_SERVER[PHP_SELF]");
-    $yhendus->close();
+    $connect->close();
     exit();
-}
+}/*
 if(isSet($_REQUEST["kustutusid"])){
     $kask=$connect->prepare("DELETE FROM lehed WHERE id=?");
     $kask->bind_param("i", $_REQUEST["kustutusid"]);
