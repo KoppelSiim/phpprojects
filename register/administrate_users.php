@@ -5,7 +5,8 @@
 ?>
 
 <div class="container">
-    <h1 style="margin-left: 15px;">Admin leht</h1>
+    <h1 style="margin-left: 15px; margin-bottom: 30px;">Administraatori leht</h1>
+    <h4 style="margin-left: 15px;">Registreerunud külalised</h4>
     <div class="submitForm">
 <?php
     while($order->fetch()){

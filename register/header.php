@@ -19,7 +19,13 @@
                 <li><a href="?page=contact">Kontakt</a></li>
                 <li><a href="?page=registration">Registreeru</a></li>
                 <li><a href="?page=schedule">Ajakava</a></li>
-                <li><a href="?page=administrator">Admin</a><li>
+                <li class="dropdown">
+                    <a href="#">Admin</a>
+                        <ul class="dropdown-content">
+                            <li><a href="?page=administrate_users">Halda registreerunuid</a></li>
+                            <li><a href="?page=administrate_events">Halda kava</a></li>
+                        </ul>
+                </li>
             </ul>
         </div>
         <div class="logo"><a href="?"><img src="images/logo.jpg" alt="Company Logo - Mobifreaks.com" /></a></div>
