@@ -12,15 +12,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         header("Location: validation-error.php");
         exit();
     }
-    
-    $order = $connect->prepare("INSERT INTO user (first_name, last_name, email) VALUES (?, ?, ?)");
-    $order->bind_param("sss", $firstName, $lastName, $email);
+    try {
+        $order = $connect->prepare("INSERT INTO user (first_name, last_name, email) VALUES (?, ?, ?)");
+        $order->bind_param("sss", $firstName, $lastName, $email);
 
-    if ($order->execute()) {
-        // Insertion successful, redirect to index
-        $_SESSION["registration_success"] = true;
+        if ($order->execute()) {
+            // Insertion successful, redirect to index
+            $_SESSION["registration_success"] = true;
+           
+            header("Location: index.php");
+            exit();
+        }
+    } catch (mysqli_sql_exception $e) {
+        $_SESSION["validation_errors"] = true;
+        // Handle duplicate email error gracefully
         header("Location: index.php");
         exit();
-    } 
+    }
 }
 ?>

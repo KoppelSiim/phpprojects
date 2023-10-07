@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Validation Error</title>
-</head>
-<body>
-    <h1>Validation error</h1>
-    <p style="color: red;">Ebasobiv sisend, proovi uuesti</p>
-    <a href="index.php">Tagasi avalehele</a>
-</body>
-</html>
+
+<h1 style="margin-left: 15px;">Validation error</h1>
+<p style="color: red; font-size: 20px; padding:5px; margin-bottom: 20px;">Ebasobiv sisend, proovi uuesti</p>
+
