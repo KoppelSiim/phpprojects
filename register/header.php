@@ -13,11 +13,12 @@
 	<div id="header">
         <div class="nav">
         	<ul>
-                <li><a href="?">Home</a></li>
-                <li><a href="?page=blog">Blog</a></li>
-                <li><a href="?page=about">About</a></li>
-                <li><a href="?page=contact">Contact</a></li>
-                <li><a href="?page=registration">Register</a></li>
+                <li><a href="?">Kodu</a></li>
+                <li><a href="?page=blog">Blogi</a></li>
+                <li><a href="?page=about">Meist</a></li>
+                <li><a href="?page=contact">Kontakt</a></li>
+                <li><a href="?page=registration">Registreeru</a></li>
+                <li><a href="?page=schedule">Ajakava</a></li>
                 <li><a href="?page=administrator">Admin</a><li>
             </ul>
         </div>

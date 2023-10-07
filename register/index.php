@@ -29,12 +29,12 @@ if(isSet($_REQUEST["kustutusid"])){
 */
 require("header.php");
 if (isset($_SESSION["registration_success"]) && $_SESSION["registration_success"] === true) {
-    echo '<p style="color: green; font-size: 20px;">Olete peole registreeritud!</p>';
+    echo '<p style="color: green; font-size: 20px; padding:5px; margin-bottom: 20px;">Olete peole registreeritud!</p>';
     // Unset the session variable to prevent repeated display
     unset($_SESSION["registration_success"]);
 }
 if (isset($_SESSION["delete_success"]) && $_SESSION["delete_success"] === true) {
-    echo '<p style="color: red; font-size: 20px;">Kirje kustutatud</p>';
+    echo '<p style="color: red; font-size: 20px; padding:5px; margin-bottom: 20px;">Kirje kustutatud</p>';
     // Unset the session variable to prevent repeated display
     unset($_SESSION["delete_success"]);
 }
