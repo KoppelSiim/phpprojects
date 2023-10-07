@@ -6,7 +6,7 @@
 
 <div class="container">
     <h1 style="margin-left: 15px; margin-bottom: 30px;">Administraatori leht</h1>
-    <h4 style="margin-left: 15px;">Registreerunud külalised</h4>
+    <h4 style="margin-left: 15px;">Halda külalisi</h4>
     <div class="submitForm">
 <?php
     while($order->fetch()){
@@ -22,7 +22,7 @@
             echo "</div>";
             echo "<form method='post' action='delete_item.php'>";
                 echo "<input type='hidden' name='id' value='$id'>";
-                echo "<button type='submit' class='btn-danger' name='delete'>Kustuta kirje</button>";
+                echo "<button type='submit' class='btn-danger' name='deleteUser'>Kustuta kirje</button>";
             echo "</form>";
         echo "</div>";
     }
