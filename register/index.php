@@ -10,6 +10,11 @@ if (isset($_SESSION["registration_success"]) && $_SESSION["registration_success"
     // Unset the session variable to prevent repeated display
     unset($_SESSION["registration_success"]);
 }
+if (isset($_SESSION["schedule_success"]) && $_SESSION["schedule_success"] === true) {
+    echo '<p style="color: green; font-size: 20px; padding:5px; margin-bottom: 20px;">Üritus on lisatud!</p>';
+    // Unset the session variable to prevent repeated display
+    unset($_SESSION["schedule_success"]);
+}
 if (isset($_SESSION["delete_success"]) && $_SESSION["delete_success"] === true) {
     echo '<p style="color: red; font-size: 20px; padding:5px; margin-bottom: 20px;">Kirje kustutatud</p>';
     // Unset the session variable to prevent repeated display
@@ -21,6 +26,7 @@ if (isset($_SESSION["validation_errors"]) && $_SESSION["validation_errors"] === 
     // Unset the session variable to prevent repeated display
     unset($_SESSION["validation_errors"]);
 }
+
 
 
 if(isset($_GET["page"])){

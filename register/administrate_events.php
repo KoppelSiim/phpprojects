@@ -7,8 +7,23 @@
 <div class="container">
     <h1 style="margin-left: 15px; margin-bottom: 30px;">Administraatori leht</h1>
     <h4 style="margin-left: 15px;">Halda kava</h4>
+    <form class="submitForm" method="POST" action="schedule_process.php">
+        <div class="form-item">
+            <label for="event" class="form-label">Üritus</label>
+            <input type="text" class="form-control" id="event" name="event" placeholder="Sisesta üritus ...">
+        </div>
+        <div class="form-item">
+            <label for="time" class="form-label">Kellaaeg</label>
+            <input type="time" class="form-control" id="time" name="time" placeholder="Sisesta algusaeg ...">
+        </div> 
+        <div class="form-item">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
     <div class="submitForm">
 <?php
+    
     while($eventQuery->fetch()){
         echo "<div class='data-item'>";
             echo "<div class='form-data'>";
