@@ -1,4 +1,3 @@
-<!-- <div class="container"> -->
 <h2>Tere tulemast sõbrad</h2>
 <p>Gringo is a free mobile website template which supports Iphone, Android and High end touch mobile devices. Which is
     released under <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution unported
@@ -19,4 +18,3 @@
 <div class="right"><a href="#">Read More &raquo;</a></div>
 <div class="clear"></div>
 </p>
-<!-- </div> -->

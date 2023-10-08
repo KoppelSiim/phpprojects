@@ -7,7 +7,6 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 */
 @charset "utf-8";
-/* CSS Document */
 body{
 	background:#ffffff;
 	font-family:Arial, Helvetica, sans-serif;
@@ -59,7 +58,6 @@ body{
     position: relative;
     display: inline-block;
 }
-
 /* Dropdown content */
 .dropdown .dropdown-content {
     display: none;
@@ -69,7 +67,6 @@ body{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-
 /* Dropdown links */
 .dropdown .dropdown-content a {
     padding: 12px;
@@ -77,17 +74,14 @@ body{
     display: block;
     color:#f2f2f2;
 }
-
 /* Dropdown links on hover */
 .dropdown-content a:hover {
    color:#565656;
 }
-
 /* Show the dropdown content when hovering over the dropdown container */
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
 .logo{
 	text-align:center;
 	margin:0;
@@ -155,7 +149,6 @@ p a:hover{
 .nav2 p a:hover{
 	color:#565656;
 	}
-
 .clear{
 	clear:both;
 }
@@ -197,20 +190,17 @@ p a:hover{
 	padding: 5px;
 	margin-bottom: 2px;
 }
-
 .container .submitForm .data-item{
 	width: 100%;
 	height: auto;
 	padding:5px;
 	margin-bottom: 10px;
 }
-
 .btn{
 	padding: 5px;
 	margin-top: 5px;
 	margin-left: 5px;
 }
-
 .btn-primary{
 	color:#88aa00;
 }

@@ -4,10 +4,10 @@
  $order->execute();
 ?>
 
-<!-- <div class="container"> -->
     <h1 style="margin-left: 15px; margin-bottom: 30px;">Administraatori leht</h1>
     <h4 style="margin-left: 15px;">Halda külalisi</h4>
     <div class="submitForm">
+
 <?php
     while($order->fetch()){
         echo "<div class='data-item'>";
@@ -26,7 +26,9 @@
             echo "</form>";
         echo "</div>";
     }
+    $order->close();
+    $connect->close();
 ?>
     </div>
-<!-- </div> -->
+
 
