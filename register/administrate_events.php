@@ -4,7 +4,7 @@
  $eventQuery ->execute();
 ?>
 
-<div class="container">
+<!-- <div class="container"> -->
     <h1 style="margin-left: 15px; margin-bottom: 30px;">Administraatori leht</h1>
     <h4 style="margin-left: 15px;">Halda kava</h4>
     <form class="submitForm" method="POST" action="schedule_process.php">
@@ -40,4 +40,4 @@
     }
 ?>
     </div>
-</div>
+<!-- </div> --- 

@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container"> -->
 <h2>Tere tulemast sõbrad</h2>
 <p>Gringo is a free mobile website template which supports Iphone, Android and High end touch mobile devices. Which is
     released under <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution unported
@@ -9,14 +9,14 @@
 <div class="clear"></div>
 </p>
 <h2>Kuulutus</h2>
-<p>Tere, ootame teid kõiki peole, mu loovusetase on hetkel nii madal, et selle teksti kirjutan hiljem siia.
-    Just, tulge peole 9 oktoobril ja võtke kõik kaasa.
+<p>Tere, ootame teid kõiki peole 11. oktoobril 2023. Uksed avatakse 17:00. Sissepääs on TASUTA!
+    Kaasa võtke loomulikult hea tuju, oma lemmik lauamängud ja lemmikloomad. KÕIK on oodatud!
 <div class="right"><a href="#">Read More &raquo;</a></div>
 <div class="clear"></div>
 </p>
-<h2>Siia veel midagi</h2>
-<p>Ma arvan, et siin võiks ka olla midagi
+<h2>Ära maga maha</h2>
+<p>Kõige lõbusam pidu, see aasta, uskumatu!
 <div class="right"><a href="#">Read More &raquo;</a></div>
 <div class="clear"></div>
 </p>
-</div>
+<!-- </div> -->

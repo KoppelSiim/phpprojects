@@ -6,7 +6,6 @@
     <title>Gringo mobi - Free mobile website templates supports - Iphone | Android | High End Touch - mobile devices</title>
     <meta http-equiv="keywords" content="free mobile website templates, free mobile website template, free iphone template, free android template, free high end touch mobile templates, free high end touch mobile template" />
     <meta http-equiv="description" content="Get free mobile website templates for Iphone , Android and High end touch mobile devices" />
-    <!-- Mobi CSS -->
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -31,4 +30,5 @@
         <div class="logo"><a href="?"><img src="images/logo.jpg" alt="Company Logo - Mobifreaks.com" /></a></div>
     </div>
     <div class="clear"></div>
+    <div class="container">
     

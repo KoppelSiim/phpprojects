@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($insert_schedule->execute()) {
             // Insertion successful, redirect to index
             $_SESSION["schedule_success"] = true;
-           
             header("Location: index.php");
             exit();
         }

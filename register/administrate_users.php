@@ -4,7 +4,7 @@
  $order->execute();
 ?>
 
-<div class="container">
+<!-- <div class="container"> -->
     <h1 style="margin-left: 15px; margin-bottom: 30px;">Administraatori leht</h1>
     <h4 style="margin-left: 15px;">Halda külalisi</h4>
     <div class="submitForm">
@@ -28,5 +28,5 @@
     }
 ?>
     </div>
-</div>
+<!-- </div> -->
 

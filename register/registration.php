@@ -1,5 +1,5 @@
 
-<div class="container">
+<!-- <div class="container"> -->
     <form class="submitForm" method="POST" action="registration_process.php">
         <div class="form-item">
             <label for="firstName" class="form-label">Eesnimi</label>
@@ -17,4 +17,4 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
-</div>
+<!-- </div> -->

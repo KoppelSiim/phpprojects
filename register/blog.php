@@ -1,1 +1,1 @@
-Tere tulemast blogi lehele
+<p>Tere tulemast blogi lehele, blogi ootab sissekandeid.</p>

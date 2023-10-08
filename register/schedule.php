@@ -5,7 +5,7 @@ $scheduleQuery->bind_result($id, $event, $time);
 $scheduleQuery->execute();
 ?>
 
-<div class="container">
+<!-- <div class="container"> -->
     <h1 style="margin-left: 15px;">Ajakava</h1>
     <div class="submitForm">
 
@@ -25,5 +25,5 @@ $scheduleQuery->execute();
 ?>
 
     </div>
-</div>
+<!-- </div> -->
 
