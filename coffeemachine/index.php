@@ -5,11 +5,9 @@
     $coffeeMachine = "coffee_machine";
     $sqlCheckTable = "SHOW TABLES LIKE '$coffeeMachine'";
     $result = mysqli_query($connect, $sqlCheckTable);
-    // id, jooginimi, topsepakis, topsejuua
+    
     if (mysqli_num_rows($result) == 0) {
-        echo "Table does not exist";
-    }
-    else{
+        // id, jooginimi, topsepakis, topsejuua
         $sqlCreateTable = "
         CREATE TABLE $coffeeMachine (
             id INT AUTO_INCREMENT PRIMARY KEY,
@@ -17,7 +15,15 @@
             package INT,
             cups INT
         )
-    ";
+        ";
 
+        if (mysqli_query($connect, $sqlCreateTable)) {
+            echo "Table '$coffeeMachine' created successfully.";
+        } else {
+            echo "Error creating table: " . mysqli_error($connect);
+        }
+
+    } else {
+        echo "Table '$coffeeMachine' already exists.";
     }
 ?>
