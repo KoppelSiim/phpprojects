@@ -1,29 +1,34 @@
 <?php
+/*
+Andmetabeli kuju: (id, jooginimi, topsepakis, topsejuua)
+Topside arv pakis näitab, mitu topsitäit saab juua ühe täitepakendi sisestamise peale.
+Loo tabel SQL-lausega. Lisa joogina kohv. Täitepaki suuruseks 50 topsi jagu pulbrit,
+algul masin tühi, juua pole midagi. 
+Loo SQL-lause juua olevate topside arvu suurendamiseks täitepaki jagu. Käivita.
+ 
+Automaadi käivitatav leht vähendab juua olevate topside arvu ühe võrra.
+Vaataja leht näitab seda arvu.
+ 
+Automaat saab hakkama mitme joogiga (kohv, tee, kakao). 
+Lehel näidatakse vaid neid jooke, millel on vähemasti üks tops juua.
+Joomise tulemusena vähendatakse vastava joogi olemasolevate topside loendurit.
+Halduslehel saab joodavate topside arvu kogust suurendada täitepaki jagu.
+ 
+*/ 
     require ($_SERVER["DOCUMENT_ROOT"]."/../config.php");
     global $connect;
-
-    $coffeeMachine = "coffee_machine";
-    $sqlCheckTable = "SHOW TABLES LIKE '$coffeeMachine'";
-    $result = mysqli_query($connect, $sqlCheckTable);
+    require("header.php");
     
-    if (mysqli_num_rows($result) == 0) {
-        // id, jooginimi, topsepakis, topsejuua
-        $sqlCreateTable = "
-        CREATE TABLE $coffeeMachine (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            name VARCHAR(50),
-            package INT,
-            cups INT
-        )
-        ";
-
-        if (mysqli_query($connect, $sqlCreateTable)) {
-            echo "Table '$coffeeMachine' created successfully.";
+    if(isset($_GET["page"])) {
+        $openPage = $_GET["page"].".php";
+        if (file_exists($openPage)) {
+            require($openPage);
         } else {
-            echo "Error creating table: " . mysqli_error($connect);
+            require("error404.php");
         }
-
     } else {
-        echo "Table '$coffeeMachine' already exists.";
+        require("default.php");
     }
+    
+    require("footer.php");
 ?>
