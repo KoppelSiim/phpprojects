@@ -6,3 +6,6 @@
 </div>
 </body>
 </html>
+<?php
+$connect->close();
+?>
