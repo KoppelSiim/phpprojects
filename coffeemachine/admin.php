@@ -46,6 +46,10 @@
             echo "<div class='form-item'>";
                 echo "Nimi: ". htmlspecialchars($name). "</br>";
                 echo "Topse: ". htmlspecialchars($cups). "</br>";
+                echo "<a href='?add-package=$id'>Lisa pakk</a></br>";
+                if($cups == 0){
+                    echo"<a href='?delete-drink=$id'>Kustuta jook</a></br>";
+                }
             echo "</div>";
         }
         $coffeeQuery->close();
