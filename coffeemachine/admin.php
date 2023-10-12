@@ -50,9 +50,9 @@
                 echo"<div class='form-label'>";
                     echo htmlspecialchars($cups);
                 echo "</div>";
-                echo "<a href='?add-package=$id'>Lisa pakk</a>";
+                echo "<a href='?add-package=$id'>Lisa pakk</a></br>";
                 if($cups == 0){
-                    echo"<a href='?delete-drink=$id'>Kustuta jook</a>";
+                    echo"<a href='?delete-drink=$id'>Kustuta jook</a></br>";
                 }
             echo "</div>";
         }
