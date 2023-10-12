@@ -7,12 +7,15 @@ $sqlDrinkQuery->execute();
 <h1>Joogiautomaat</h1>
 <div class="formSubmit" action="?">
 <?php
+    
     while($sqlDrinkQuery->fetch()){
-        echo "<div id='form-item'>";
-            echo htmlspecialchars($name). "</br>";
-            echo htmlspecialchars($cups). "</br>";
-            echo "<a href='?update-drink=$id'>Joo</a>";
-        echo "</div>";
+        if($cups>0){
+            echo "<div id='form-item'>";
+                echo htmlspecialchars($name). "</br>";
+                echo htmlspecialchars($cups). "</br>";
+                echo "<a href='?update-drink=$id'>Joo</a>";
+            echo "</div>";
+        }
     }
     $sqlDrinkQuery->close();
 ?>

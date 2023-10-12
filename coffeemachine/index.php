@@ -2,6 +2,7 @@
 
     require ($_SERVER["DOCUMENT_ROOT"]."/../config.php");
     global $connect;
+    
     if(isSet($_REQUEST["update-drink"])){
         $sqlUpdateCups=$connect->prepare("UPDATE coffee_machine SET cups = cups - 1 WHERE id = ?");
         $sqlUpdateCups->bind_param('i', $_REQUEST['update-drink']);
@@ -22,9 +23,7 @@
         } else {
             require("error404.php");
         }
-    } else {
-        require("default.php");
-    }
+    } 
     
     require("footer.php");
 ?>

@@ -11,9 +11,8 @@
 	<div id="header">
         <div class="nav">
         	<ul>
-                <li><a href="?">Kodu</a></li>
-                <li><a href="?page=admin">Admin</a></li>
-                <li><a href="?page=user">Kasutaja</a></li>
+                <li><a href="?page=admin">Haldus</a></li>
+                <li><a href="?page=user">Kohvimasin</a></li>
             </ul>
         </div>
     </div>

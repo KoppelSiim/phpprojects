@@ -24,7 +24,7 @@
         $coffeeQuery->bind_result($id, $name, $package, $cups);
         $coffeeQuery->execute();
 ?>
-<h1>Admin leht </h1>
+<h1>Haldus leht </h1>
 <form class="submitForm" method="POST" action="add_drink.php">
     <div class="form-item">
         <label for="name" class="form-label">Joogi nimi</label>
