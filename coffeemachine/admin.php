@@ -25,30 +25,34 @@
         $coffeeQuery->execute();
 ?>
 <h1>Haldus leht </h1>
-<form class="submitForm" method="POST" action="add_drink.php">
+<form class="formSubmit" method="POST" action="add_drink.php">
     <div class="form-item">
         <label for="name" class="form-label">Joogi nimi</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Sisesta jook..." required>
     </div>
     <div class="form-item">
         <label for="package" class="form-label">Täitepaki suurus</label>
-        <input type="number" class="form-control" id="package" name="package" min="1" max="1000" required>
+        <input style="width:50px;" type="number" class="form-control" id="package" name="package" min="1" max="1000" required>
     </div> 
     <div class="form-item">
         <button type="submit" class="btn btn-primary">Lisa jook</button>
     </div>
 </form>
 
-<form class="submitForm">
+<form class="formSubmit">
 <h2>Joogid</h2>
 <?php
         while($coffeeQuery->fetch()) {
             echo "<div class='form-item'>";
-                echo "Nimi: ". htmlspecialchars($name). "</br>";
-                echo "Topse: ". htmlspecialchars($cups). "</br>";
-                echo "<a href='?add-package=$id'>Lisa pakk</a></br>";
+                echo"<div class='form-label'>";
+                    echo htmlspecialchars($name);
+                echo "</div>";
+                echo"<div class='form-label'>";
+                    echo htmlspecialchars($cups);
+                echo "</div>";
+                echo "<a href='?add-package=$id'>Lisa pakk</a>";
                 if($cups == 0){
-                    echo"<a href='?delete-drink=$id'>Kustuta jook</a></br>";
+                    echo"<a href='?delete-drink=$id'>Kustuta jook</a>";
                 }
             echo "</div>";
         }

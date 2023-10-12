@@ -1,0 +1,81 @@
+.body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vw;
+}
+
+#header{
+    width: 15vw;
+    height: 5vh;
+    margin-bottom:20px;
+}
+#header .nav{
+    width: 100%;
+    height: auto;
+}
+#header .nav ul li{
+    list-style: none;
+    padding: 5px;
+    background-color: #41B3A3
+}
+#header .nav ul li a{
+    color:white;
+    text-decoration: none;
+    padding-left: 5px;
+}
+#header .nav ul li a:hover{
+    color:violet;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color:violet;
+    list-style: none;
+}
+.footer{
+    width: 100vw;
+    height: 5vh;
+    text-align: center;
+    color:brown;
+}
+.container{
+    width:100vw;
+    height:80vh;
+    margin-bottom: 5vh;
+    overflow-y: auto;
+
+}
+.container .formSubmit{
+    width: 25vw;
+    height: auto;
+    margin-left: 40px;
+}
+.container .formSubmit .form-item{
+    margin-bottom:5px
+}
+
+.container .formSubmit .form-item .form-label{
+    height: auto;
+	display: block;
+    padding: 2px;
+    margin-bottom:2px;
+}
+.container .formSubmit .form-item .form-control{
+    height: auto;
+	display: block;
+	padding: 5px;
+	margin-bottom: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+	box-sizing: border-box;
+}
+h1{
+    margin-left:30px;
+}
+.btn-primary{
+    color:green;
+    padding:5px;
+    margin-top:5px;
+}

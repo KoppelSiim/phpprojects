@@ -10,9 +10,13 @@ $sqlDrinkQuery->execute();
     
     while($sqlDrinkQuery->fetch()){
         if($cups>0){
-            echo "<div id='form-item'>";
-                echo htmlspecialchars($name). "</br>";
-                echo htmlspecialchars($cups). "</br>";
+            echo "<div class='form-item'>";
+                echo "<div class='form-label'>";
+                    echo htmlspecialchars($name);
+                echo "</div>";
+                echo "<div class='form-label'>";
+                    echo htmlspecialchars($cups);
+                echo "</div>";
                 echo "<a href='?update-drink=$id'>Joo</a>";
             echo "</div>";
         }
